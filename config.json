@@ -1,0 +1,56 @@
+{
+    "embeddings": {
+        "glove": {
+            "model_name": "glove",
+            "dimension": 300,
+            "type": "word embedding",
+            "description": "Weaker embedding"
+        },
+        "all-MiniLM-L6-v2": {
+            "model_name": "all-MiniLM-L6-v2",
+            "dimension": 384,
+            "type": "sentence-transformer",
+            "description": "Lightweight and fast sentence embeddings"
+        },
+        "all-mpnet-base-v2": {
+            "model_name": "all-mpnet-base-v2", 
+            "dimension": 768,
+            "description": "Best balance"
+        },
+        "Qwen3-Embedding-8B": {
+            "model_name": "Qwen/Qwen3-Embedding-8B",
+            "dimension": 4096,
+            "type": "sentence-transformer",
+            "description": "High-capacity Qwen embedding model"
+        }
+    },
+    "dataset": {
+        "test_ratio": 0.2,
+        "batch_size": 16,
+        "shuffle": true,
+        "seed": [0,1,2,3,4,5,6,7,8,9],
+        "max_tpl_img": 30,
+        "max_search": 30,
+        "tau": 0.1
+    },
+    "scenes": {
+        "office": {
+            "gt_path": "data/SARD_IndoorDataset/office/ground_truth.json",
+            "sg_path": "output_egtr/office/scene_graph"
+        },
+        "dining_room": {
+            "gt_path": "data/SARD_IndoorDataset/dining_room/ground_truth.json",
+            "sg_path": "output_egtr/dining_room/scene_graph"
+        }
+    },
+    "visual_genome": {
+        "sg_path": "output_egtr/visual_genome/scene_graph",
+        "max_tpl_img": 30,
+        "gt_path": null
+    },
+    "mit-67": {
+        "sg_path": "output_egtr/balanced_mit-67",
+        "max_tpl_img": 30,
+        "gt_path": null
+    }
+}
